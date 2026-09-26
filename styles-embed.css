@@ -1533,10 +1533,8 @@
   color: var(--white);
   margin-top: auto;
 }
-.ottff .ff-award__copy { font-size: 15px; color: var(--ink-2); margin: 0; }
-.ottff .ff-award--vote { background: var(--yellow); border-color: var(--yellow); }
-.ottff .ff-award--vote .ff-award__label { color: var(--black); }
-.ottff .ff-award--vote .ff-award__title { color: var(--black); margin-top: 0; }
+.ottff .ff-award__copy { font-size: 15px; color: rgba(255,255,255,.75); margin: 0; }
+.ottff .ff-award--vote .ff-award__title { margin-top: 0; }
 .ottff .ff-award--vote .ff-btn { align-self: flex-start; margin-top: auto; }
 @media (min-width: 700px) {.ottff .ff-award-grid { grid-template-columns: 1fr 1fr; }}
 @media (min-width: 1080px) {.ottff .ff-award-grid { grid-template-columns: repeat(4, 1fr); }}

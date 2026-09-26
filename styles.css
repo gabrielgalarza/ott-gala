@@ -1716,10 +1716,8 @@ body.is-rsvp-open { overflow: hidden; }
   color: var(--white);
   margin-top: auto;
 }
-.award__copy { font-size: 15px; color: var(--ink-2); margin: 0; }
-.award--vote { background: var(--yellow); border-color: var(--yellow); }
-.award--vote .award__label { color: var(--black); }
-.award--vote .award__title { color: var(--black); margin-top: 0; }
+.award__copy { font-size: 15px; color: rgba(255,255,255,.75); margin: 0; }
+.award--vote .award__title { margin-top: 0; }
 .award--vote .btn { align-self: flex-start; margin-top: auto; }
 @media (min-width: 700px) {
   .award-grid { grid-template-columns: 1fr 1fr; }
