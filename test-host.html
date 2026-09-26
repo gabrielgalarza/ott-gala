@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Test host (simulated Webflow CSS bleed)</title>
+<style>
+/* Simulated worst-case Webflow CSS bleed */
+body { font-family: Arial; margin:0; padding:24px; background:#fafafa; }
+h1,h2 { font-family: 'Times New Roman', serif }
+h3,a { font-family: Georgia, serif }
+a { text-decoration: underline; color: #06c }
+p { margin: 22px 0 }
+.nav { flex-direction: column; background: #f0a }
+.btn { width: 44px; display: block; border-radius: 999px; padding: 9px }
+.container { max-width: 820px }
+.card { background: red; border: 4px solid lime }
+.hero { flex-direction: column }
+.band { background: teal }
+.w-embed { padding: 16px; border: 2px dashed #888; }
+</style>
+</head>
+<body>
+<h1>Host page heading (outside embed - should be Times serif)</h1>
+<h2>Outside .ottff heading - also Times serif</h2>
+<p>Host paragraph outside the embed. Should have margin 22px 0 and Arial body font.</p>
+
+<div class="w-embed">
+<!-- The Gala: Fire &amp; Ice Edition - namespaced NATIVE embed (prefixed classes) -->
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles-embed.css" />
+<div class="ottff">
+<header class="ff-nav">
+  <a href="#top" class="ff-nav__brand">
+    <img class="ff-brand-mark" src="https://gabrielgalarza.github.io/ott-gala/logos/ott.png" alt="Over The Top" />
+    <span class="ff-brand-divider"></span>
+    <span class="ff-brand-event">OCT 17</span>
+  </a>
+  <nav class="ff-nav__links">
+    <a href="#vision">Vision</a>
+    <a href="#night">The Night</a>
+    <a href="#awards">Awards</a>
+    <a href="#dresscode">Dress Code</a>
+    <a href="#partners">Partners</a>
+  </nav>
+  <a class="ff-btn ff-btn--small ff-btn--yellow" data-register href="https://events.sweatpals.com/4cf478e4" target="_blank" rel="noopener">Register</a>
+</header>
+
+<!-- HERO -->
+<section class="ff-hero" id="top">
+  <img class="ff-hero__bg" src="https://gabrielgalarza.github.io/ott-gala/images/hero.jpg" alt="Over The Top guests dancing at a past OTT event" />
+  <div class="ff-hero__overlay ff-hero__overlay--gala"></div>
+  <div class="ff-hero__content">
+    <div class="ff-hero__eyebrow">
+      <span class="ff-dot"></span> W San Francisco Rooftop &#183; Sat Oct 17, 2026
+    </div>
+    <h1 class="ff-hero__title">
+      <span class="ff-line">THE GALA</span>
+      <span class="ff-line ff-line--yellow">FIRE &amp; ICE</span>
+      <span class="ff-line ff-line--small">EDITION &#183; BLACK TIE FORMAL</span>
+    </h1>
+    <p class="ff-hero__presented">An Over The Top Production &middot; Our biggest night of the year</p>
+    <div class="ff-hero__ctas">
+      <a class="ff-btn ff-btn--yellow ff-btn--lg" data-register href="https://events.sweatpals.com/4cf478e4" target="_blank" rel="noopener">Register &#8594;</a>
+      <a class="ff-btn ff-btn--ghost ff-btn--lg" href="#vision">Learn more</a>
+    </div>
+    <div class="ff-hero__partners">
+      <span class="ff-hero__partners-label">Good to know</span>
+      <p style="font-size:14px; color:rgba(255,255,255,.82); margin:0; max-width:580px;">
+        Black tie formal &#183; Rooftop at W San Francisco &#183; OTT members receive free VIP tickets &#183; Limited capacity.
+      </p>
+    </div>
+  </div>
+  <div class="ff-hero__scroll">scroll &#8595;</div>
+</section>
+
+<!-- VISION + STATS -->
+<section class="ff-band ff-band--yellow" id="vision">
+  <div class="ff-container">
+    <div class="ff-vision__grid">
+      <div class="ff-vision__copy">
+        <span class="ff-kicker">The vision</span>
+        <h2 class="ff-h2">Think Met Gala in the Bay.</h2>
+        <p>Our biggest night of the year is here. We're taking over the W San Francisco rooftop for an evening of
+           glamour, music, and celebration as we honor the <strong>community builders, connectors, creators, and brand partners</strong>
+           who made this year what it was.</p>
+      </div>
+      <div class="ff-vision__stats">
+        <div class="ff-stat"><div class="ff-stat__num">FREE</div><div class="ff-stat__label">VIP for members</div></div>
+        <div class="ff-stat"><div class="ff-stat__num">4</div><div class="ff-stat__label">OTT Awards</div></div>
+        <div class="ff-stat"><div class="ff-stat__num">SUNSET</div><div class="ff-stat__label">DJ sets into the night</div></div>
+        <div class="ff-stat"><div class="ff-stat__num">BLACK TIE</div><div class="ff-stat__label">Formal</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE NIGHT -->
+<section class="ff-band" id="night">
+  <div class="ff-container">
+    <span class="ff-kicker">The night</span>
+    <h2 class="ff-h2">What to expect.</h2>
+    <p class="ff-lede" style="margin:-12px 0 24px; max-width:780px;">
+      From the carpet to the last track, here's what's part of the night.
+    </p>
+
+    <div class="ff-rail" data-rail>
+      <button class="ff-rail__nav ff-rail__nav--prev" type="button" aria-label="Previous">&#8249;</button>
+      <div class="ff-rail__viewport">
+        <div class="ff-rail__track">
+
+          <article class="ff-card ff-card--rail" data-card>
+            <img class="ff-card__img" src="https://gabrielgalarza.github.io/ott-gala/images/welcome-drinks.jpg" alt="Welcome drinks on arrival" />
+            <div class="ff-card__body">
+              <div class="ff-card__access-row">
+                <span class="ff-card__access ff-card__access--free">On arrival</span>
+              </div>
+              <h3 class="ff-card__title">Welcome Drinks</h3>
+              <p class="ff-card__sub">A glass in hand when you arrive</p>
+              <div class="ff-card__expand">
+                <p>Welcome drinks waiting for you the moment you step onto the rooftop.</p>
+              </div>
+              <button class="ff-card__toggle" aria-label="Expand">+</button>
+            </div>
+          </article>
+
+          <article class="ff-card ff-card--rail" data-card>
+            <img class="ff-card__img" src="https://gabrielgalarza.github.io/ott-gala/images/red-carpet.jpg" alt="Red carpet and photo moments" />
+            <div class="ff-card__body">
+              <h3 class="ff-card__title">Red Carpet Arrivals</h3>
+              <p class="ff-card__sub">Paparazzi &#183; photo moments all night</p>
+              <div class="ff-card__expand">
+                <p>Red carpet arrivals, paparazzi, and photo moments all night. Come ready for the carpet.</p>
+              </div>
+              <button class="ff-card__toggle" aria-label="Expand">+</button>
+            </div>
+          </article>
+
+          <article class="ff-card ff-card--rail" data-card>
+            <img class="ff-card__img" src="https://gabrielgalarza.github.io/ott-gala/images/year-in-review.jpg" alt="The OTT community gathered at a past event" />
+            <div class="ff-card__body">
+              <h3 class="ff-card__title">Our Year in Review</h3>
+              <p class="ff-card__sub">The year that was &#183; a first look at what's next</p>
+              <div class="ff-card__expand">
+                <p>A look back at the moments that defined our year, and a first look at what's to come.</p>
+              </div>
+              <button class="ff-card__toggle" aria-label="Expand">+</button>
+            </div>
+          </article>
+
+          <article class="ff-card ff-card--rail" data-card>
+            <img class="ff-card__img" src="https://gabrielgalarza.github.io/ott-gala/images/awards.jpg" alt="OTT members dressed up at a past event" />
+            <div class="ff-card__body">
+              <h3 class="ff-card__title">The OTT Awards</h3>
+              <p class="ff-card__sub">Four honors &#183; one night</p>
+              <div class="ff-card__expand">
+                <p>Celebrating Member of the Year, Connector of the Year, Sound of the Year, and Community Partner of the Year.</p>
+              </div>
+              <button class="ff-card__toggle" aria-label="Expand">+</button>
+            </div>
+          </article>
+
+          <article class="ff-card ff-card--rail" data-card>
+            <img class="ff-card__img" src="https://gabrielgalarza.github.io/ott-gala/images/toast.jpg" alt="Glasses raised for a toast" />
+            <div class="ff-card__body">
+              <h3 class="ff-card__title">A Toast to Our Community</h3>
+              <p class="ff-card__sub">Glasses up, together</p>
+              <div class="ff-card__expand">
+                <p>One rooftop, glasses up, for everyone who showed up and built with us this year.</p>
+              </div>
+              <button class="ff-card__toggle" aria-label="Expand">+</button>
+            </div>
+          </article>
+
+          <article class="ff-card ff-card--rail" data-card>
+            <img class="ff-card__img" src="https://gabrielgalarza.github.io/ott-gala/images/dj-sets.jpg" alt="DJ set at a past OTT event" />
+            <div class="ff-card__body">
+              <div class="ff-card__access-row">
+                <span class="ff-card__access ff-card__access--free">Live sets</span>
+                <span class="ff-card__attr">rooftop</span>
+              </div>
+              <h3 class="ff-card__title">DJ Sets</h3>
+              <p class="ff-card__sub">From sunset into the night</p>
+              <div class="ff-card__expand">
+                <p>DJ sets on the rooftop from sunset into the night.</p>
+              </div>
+              <button class="ff-card__toggle" aria-label="Expand">+</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+      <button class="ff-rail__nav ff-rail__nav--next" type="button" aria-label="Next">&#8250;</button>
+    </div>
+  </div>
+</section>
+
+<!-- THE OTT AWARDS -->
+<section class="ff-band ff-band--dark" id="awards">
+  <div class="ff-container">
+    <span class="ff-kicker ff-kicker--yellow">The OTT Awards</span>
+    <h2 class="ff-h2 ff-h2--light">Four honors. One night.</h2>
+    <p class="ff-lede" style="color:rgba(255,255,255,.7); margin:-12px 0 28px; max-width:780px;">
+      Celebrating the members, connectors, sounds, and partners that defined our year.
+    </p>
+
+    <div class="ff-award-grid">
+      <article class="ff-award">
+        <span class="ff-award__label">Award</span>
+        <h3 class="ff-award__title">Member of the Year</h3>
+      </article>
+      <article class="ff-award">
+        <span class="ff-award__label">Award</span>
+        <h3 class="ff-award__title">Connector of the Year</h3>
+      </article>
+      <article class="ff-award ff-award--vote">
+        <span class="ff-award__label">Your vote</span>
+        <h3 class="ff-award__title">Sound of the Year</h3>
+        <p class="ff-award__copy">Sound of the Year is up to you. Nominate your favorite DJ or artist from this year on our Instagram.</p>
+        <a class="ff-btn ff-btn--black ff-btn--small" href="https://instagram.com/overthetopxp" target="_blank" rel="noopener">Nominate @overthetopxp &#8594;</a>
+      </article>
+      <article class="ff-award">
+        <span class="ff-award__label">Award</span>
+        <h3 class="ff-award__title">Community Partner of the Year</h3>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DRESS CODE -->
+<section class="ff-band" id="dresscode">
+  <div class="ff-container">
+    <span class="ff-kicker">Dress code</span>
+    <h2 class="ff-h2">Black tie formal. Choose your element.</h2>
+    <p class="ff-lede" style="margin:-12px 0 28px; max-width:780px;">
+      Formal wear only. Choose your element and own it. Come ready for the carpet.
+    </p>
+
+    <div class="ff-elements">
+      <div class="ff-element ff-element--fire">
+        <span class="ff-element__name">Fire</span>
+        <p class="ff-element__copy">Bold reds, golds, and flame tones.</p>
+        <ul class="ff-element__swatches" aria-label="Fire colors">
+          <li><span style="background:#B3171D"></span>Red</li>
+          <li><span style="background:#D4A017"></span>Gold</li>
+          <li><span style="background:#F26B1D"></span>Flame</li>
+        </ul>
+      </div>
+      <div class="ff-element ff-element--ice">
+        <span class="ff-element__name">Ice</span>
+        <p class="ff-element__copy">Icy silvers, whites, and blues.</p>
+        <ul class="ff-element__swatches" aria-label="Ice colors">
+          <li><span style="background:#C9CED6"></span>Silver</li>
+          <li><span style="background:#FFFFFF"></span>White</li>
+          <li><span style="background:#6FA8DC"></span>Blue</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="ff-band ff-band--cream" id="partners">
+  <div class="ff-container">
+    <span class="ff-kicker">Partners</span>
+    <h2 class="ff-h2">Thank you to our partners.</h2>
+    <p class="ff-lede" style="margin:-12px 0 8px; max-width:780px;">
+      Thank you to all of our community and brand partners.
+    </p>
+
+    <h3 class="ff-partners-subhead">Community partners</h3>
+    <ul class="ff-name-chips">
+      <li>NSBE Bay Area</li><li>Tribe</li><li>WestxChange</li><li>510 Society</li><li>Bayfitco</li>
+      <li>The Facility</li><li>Authentic Craft</li><li>Fear Training</li><li>Strong Babes</li>
+      <li>Inessence Dance</li><li>Mbere Moves</li><li>United Tribes of Africa</li><li>Moment.us</li>
+      <li>Pens&#233;e Florist</li><li>Tradu Spices</li><li>Nirvana Soul</li><li>Jackie's Place</li>
+    </ul>
+
+    <h3 class="ff-partners-subhead">Brand partners</h3>
+    <ul class="ff-name-chips">
+      <li>Sweatpals</li><li>Rivian</li><li>Hennessy</li><li>Belvedere</li><li>Red Bull</li><li>Volo Sports</li>
+      <li>Cross Country Mortgage</li><li>Strava</li><li>New Balance</li><li>Liquid IV</li><li>Teremana Tequila</li>
+      <li>Maker's Mark</li><li>OTR Cocktails</li><li>Nectar Collective</li><li>Proximo Spirits</li><li>Cantera Negra</li>
+      <li>Gray Whale Vodka</li><li>Arizona Hard</li><li>W San Francisco</li><li>Hotel Nikko</li><li>Kissel Uptown</li>
+      <li>Wellness Affair</li><li>Laelia Tequila</li><li>Kalos Health</li><li>NerdWallet Wealth Partners</li>
+      <li>The Crossing at East Cut</li><li>Sightglass Cafe</li><li>The Last Drip</li><li>Skechers</li>
+    </ul>
+
+    <p class="ff-partners-cta">
+      Want to build with us? Brands, venues, and creatives, come find our team on the night, or DM
+      <a href="https://instagram.com/overthetopxp" target="_blank" rel="noopener">@overthetopxp</a>.
+    </p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="ff-band" id="gallery">
+  <div class="ff-container">
+    <span class="ff-kicker">Our year</span>
+    <h2 class="ff-h2">The moments that got us here.</h2>
+  </div>
+  <div class="ff-gallery">
+    <img src="https://gabrielgalarza.github.io/ott-gala/images/gallery-1.jpg" alt="" loading="lazy" />
+    <img src="https://gabrielgalarza.github.io/ott-gala/images/gallery-2.jpg" alt="" loading="lazy" />
+    <img src="https://gabrielgalarza.github.io/ott-gala/images/gallery-3.jpg" alt="" loading="lazy" />
+    <img src="https://gabrielgalarza.github.io/ott-gala/images/gallery-4.jpg" alt="" loading="lazy" />
+    <img src="https://gabrielgalarza.github.io/ott-gala/images/gallery-5.jpg" alt="" loading="lazy" />
+    <img src="https://gabrielgalarza.github.io/ott-gala/images/gallery-6.jpg" alt="" loading="lazy" />
+    <img src="https://gabrielgalarza.github.io/ott-gala/images/gallery-7.jpg" alt="" loading="lazy" />
+    <img src="https://gabrielgalarza.github.io/ott-gala/images/gallery-8.jpg" alt="" loading="lazy" />
+    <img src="https://gabrielgalarza.github.io/ott-gala/images/gallery-9.jpg" alt="" loading="lazy" />
+    <img src="https://gabrielgalarza.github.io/ott-gala/images/gallery-10.jpg" alt="" loading="lazy" />
+    <img src="https://gabrielgalarza.github.io/ott-gala/images/gallery-11.jpg" alt="" loading="lazy" />
+    <img src="https://gabrielgalarza.github.io/ott-gala/images/gallery-12.jpg" alt="" loading="lazy" />
+    <img src="https://gabrielgalarza.github.io/ott-gala/images/gallery-13.jpg" alt="" loading="lazy" />
+    <img src="https://gabrielgalarza.github.io/ott-gala/images/gallery-14.jpg" alt="" loading="lazy" />
+    <img src="https://gabrielgalarza.github.io/ott-gala/images/gallery-15.jpg" alt="" loading="lazy" />
+    <img src="https://gabrielgalarza.github.io/ott-gala/images/gallery-16.jpg" alt="" loading="lazy" />
+  </div>
+</section>
+
+<!-- REGISTER / CTA -->
+<section class="ff-band ff-band--yellow" id="register">
+  <div class="ff-container ff-container--narrow ff-text-center">
+    <span class="ff-kicker">Limited capacity</span>
+    <h2 class="ff-h2" style="margin-bottom:14px;">See you on the carpet.</h2>
+    <p style="margin:0 0 28px; font-weight:700; color:var(--ink);">
+      Grab your tickets early &#183; OTT members receive free VIP tickets
+    </p>
+    <div class="ff-cta-row">
+      <a class="ff-btn ff-btn--black ff-btn--lg" data-register href="https://events.sweatpals.com/4cf478e4" target="_blank" rel="noopener">Register &#8594;</a>
+    </div>
+    <p style="margin:22px 0 0; font-size:13px; color:var(--ink-2); letter-spacing:.03em;">
+      Black tie formal &#183; W San Francisco Rooftop
+    </p>
+    <p style="margin:14px 0 0; font-size:14px; color:var(--ink-2);">
+      Questions? DM <a href="https://instagram.com/overthetopxp" target="_blank" rel="noopener" style="font-weight:600; text-decoration:underline;">@overthetopxp</a>
+      or email <a href="mailto:experienceott@gmail.com" style="font-weight:600; text-decoration:underline;">experienceott@gmail.com</a>
+    </p>
+  </div>
+</section>
+
+<script src="script-embed.js"></script>
+</div>
+
+</div>
+
+<h2>Another host heading after the embed - Times serif again</h2>
+</body>
+</html>

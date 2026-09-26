@@ -1,0 +1,30 @@
+<!-- The Gala: Fire &amp; Ice Edition - live embed. Paste once; it self-updates from the repo. -->
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://gabrielgalarza.github.io/ott-gala/styles-embed.css" />
+<div id="ott-embed"></div>
+<script>
+(function () {
+  var BASE = "https://gabrielgalarza.github.io/ott-gala";
+  var mount = document.getElementById("ott-embed");
+  if (!mount) return;
+  fetch(BASE + "/embed-body.html", { cache: "no-cache" })
+    .then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.text();
+    })
+    .then(function (html) {
+      mount.innerHTML = html;
+      var s = document.createElement("script");
+      s.src = BASE + "/script-embed.js";
+      s.async = false;
+      document.body.appendChild(s);
+    })
+    .catch(function (err) {
+      mount.innerHTML =
+        '<p style="font-family:Inter,system-ui,sans-serif;text-align:center;padding:48px 20px;font-size:16px;">' +
+        'The Gala: Fire &amp; Ice Edition &#183; Sat Oct 17 &#183; W San Francisco Rooftop<br />' +
+        '<a href="https://events.sweatpals.com/4cf478e4" style="text-decoration:underline;font-weight:600;">Register &#8594;</a></p>';
+      if (window.console) console.error("OTT embed failed to load:", err);
+    });
+})();
+</script>
